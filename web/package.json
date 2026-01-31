@@ -1,0 +1,53 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@portabletext/react": "^6.0.2",
+    "@sanity/image-url": "^2.0.3",
+    "clsx": "^2.1.1",
+    "cookies-next": "^6.1.1",
+    "framer-motion": "^12.29.2",
+    "gsap": "^3.14.2",
+    "lodash": "^4.17.23",
+    "next": "16.1.6",
+    "next-sanity": "^12.0.15",
+    "next-view-transitions": "^0.3.5",
+    "pubsub-js": "^1.9.5",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-fast-marquee": "^1.6.5",
+    "react-intersection-observer": "^10.0.2",
+    "react-player": "^3.4.0",
+    "react-slick": "^0.31.0",
+    "sanity-codegen": "^0.9.8",
+    "sass": "^1.97.3",
+    "styled-components": "^6.3.8",
+    "throttle-debounce": "^5.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/jsonp": "^0.2.3",
+    "@types/lodash": "^4.17.23",
+    "@types/node": "^20",
+    "@types/pubsub-js": "^1.8.6",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/styled-components": "^5.1.36",
+    "@types/throttle-debounce": "^5.0.2",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}
