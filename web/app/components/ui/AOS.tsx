@@ -43,7 +43,7 @@ const AOS = ({
         // start: "top 50%",
         start: "top 96%",
         once: true,
-        markers: true,
+        // markers: true,
       },
     });
 

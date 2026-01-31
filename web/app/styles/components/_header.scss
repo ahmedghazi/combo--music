@@ -24,12 +24,15 @@ header {
   .logo {
     svg {
       max-width: 10em;
-      path {
-        fill: var(--color-primary);
+      aspect-ratio: 2000 / 976;
+      width: 10em;
+      height: 100%;
+      .st0 {
+        fill: var(--color-secondary);
       }
       &:hover {
         path {
-          fill: var(--color-accent);
+          // fill: var(--color-accent);
         }
       }
     }
