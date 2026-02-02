@@ -18,8 +18,8 @@
 //   border-radius: 2em;
 //   text-align: center;
 //   display: inline-block;
-//   height: var(--space-50);
-//   line-height: calc(var(--space-50) * 0.9);
+//   height: var(--spacing-50);
+//   line-height: calc(var(--spacing-50) * 0.9);
 //   text-transform: uppercase;
 //   transition:
 //     background-color 0.2s,
@@ -38,23 +38,23 @@
 // }
 
 // .grid-card {
-//   padding: var(--space-50);
+//   padding: var(--spacing-50);
 //   @media all and (max-width: variables.$md) {
-//     padding: var(--space-m-md);
+//     padding: var(--spacing-m-md);
 //   }
 //   .card {
-//     margin-bottom: var(--space-50);
+//     margin-bottom: var(--spacing-50);
 //   }
 // }
 // .card {
 //   position: relative;
 //   .inner {
 //     display: grid;
-//     gap: var(--space-lg);
+//     gap: var(--spacing-lg);
 //     // pointer-events: none;
 //     .content {
 //       display: grid;
-//       gap: var(--space-lg);
+//       gap: var(--spacing-lg);
 //       .header {
 //         display: flex;
 //         justify-content: space-between;
@@ -99,7 +99,7 @@
 //     padding: toRem(30) 0 toRem(20);
 //     .icon-arrow {
 //       position: absolute;
-//       right: var(--space-50);
+//       right: var(--spacing-50);
 //     }
 
 //     .title {
@@ -115,7 +115,7 @@
 //   @media all and (max-width: variables.$md) {
 //     .summary {
 //       .icon-arrow {
-//         right: var(--space-lg);
+//         right: var(--spacing-lg);
 //         svg {
 //           width: auto;
 //           height: var(--text-m-xl);

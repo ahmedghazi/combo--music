@@ -12,7 +12,7 @@
     left: 0;
   }
   .summary-detail {
-    // margin-bottom: var(--space-xl);
+    // margin-bottom: var(--spacing-xl);
     .summary .pointer-events-none {
       pointer-events: initial;
     }
@@ -22,7 +22,7 @@
         color: black;
       }
       .detail {
-        // padding-top: var(--space-xl);
+        // padding-top: var(--spacing-xl);
       }
     }
     .summary button {

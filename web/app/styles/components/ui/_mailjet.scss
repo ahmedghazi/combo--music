@@ -22,7 +22,7 @@
 
   input {
     border: none;
-    padding: toRem(14) var(--space-lg);
+    padding: toRem(14) var(--spacing-lg);
 
     &::placeholder {
       color: var(--color-primary);

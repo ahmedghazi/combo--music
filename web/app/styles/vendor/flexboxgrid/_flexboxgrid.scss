@@ -53,12 +53,12 @@ $half-gutter-width: calc(#{$gutter-width} * 0.5);
   margin-right: calc(-1 * #{$gutter-width});
   margin-left: calc(-1 * #{$gutter-width});
   @media all and (max-width: variables.$md) {
-    margin-right: calc(-1 * var(--space-m-md));
-    margin-left: calc(-1 * var(--space-m-md));
+    margin-right: calc(-1 * var(--spacing-m-md));
+    margin-left: calc(-1 * var(--spacing-m-md));
     & > [class^="col-"],
     & > [class*=" col-"] {
-      padding-right: var(--space-m-md);
-      padding-left: var(--space-m-md);
+      padding-right: var(--spacing-m-md);
+      padding-left: var(--spacing-m-md);
     }
   }
   &.no-gutter {

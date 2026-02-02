@@ -2,10 +2,10 @@
 
 footer {
   position: relative;
-  padding: var(--space-50);
+  padding: var(--spacing-50);
   z-index: 1;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   font-family: var(--font-primary-mono);
   .logo {
     width: 230px;
@@ -14,7 +14,7 @@ footer {
   }
 
   @media all and (max-width: variables.$md) {
-    padding: var(--space-50) var(--space-md);
+    padding: var(--spacing-50) var(--spacing-md);
     text-align: center;
     .text {
       max-width: unset;

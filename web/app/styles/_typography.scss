@@ -14,13 +14,6 @@
     url("./fonts/NTBau-Mono-Regular.woff2") format("woff2");
   font-display: swap;
 }
-@font-face {
-  font-family: "ABCCamera-Medium";
-  src:
-    url("./fonts/ABCCamera-Medium.woff") format("woff"),
-    url("./fonts/ABCCamera-Medium.woff2") format("woff2");
-  font-display: swap;
-}
 
 //ABCDiatype-Regular
 body {
@@ -189,7 +182,7 @@ hr {
   background-color: var(--color-primary);
   border: 0;
   height: 1px;
-  margin: 1.1em calc(var(--space-sm) * -1);
+  margin: 1.1em calc(var(--spacing-sm) * -1);
 }
 
 pre {

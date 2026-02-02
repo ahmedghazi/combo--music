@@ -15,7 +15,7 @@ header {
     height: calc(var(--text-sm) * 2);
   }
   .inner {
-    padding: 12px var(--space-xl);
+    padding: 12px var(--spacing-50);
   }
   &.is-up {
     transform: translateY(-100%);
@@ -24,15 +24,12 @@ header {
   .logo {
     svg {
       max-width: 10em;
-      aspect-ratio: 2000 / 976;
-      width: 10em;
-      height: 100%;
-      .st0 {
-        fill: var(--color-secondary);
+      path {
+        fill: var(--color-primary);
       }
       &:hover {
         path {
-          // fill: var(--color-accent);
+          fill: var(--color-accent);
         }
       }
     }
@@ -42,24 +39,34 @@ header {
     font-family: var(--font-primary-mono);
     ul {
       gap: 70px;
+      gap: var(--spacing-xl);
     }
     li {
       position: relative;
       &:hover .sub-menu {
         display: flex;
       }
+      &.is-cta {
+        display: flex;
+        justify-content: flex-end;
+        flex: 2;
+      }
     }
     .sub-menu {
       position: absolute;
-      padding: var(--space-md);
-      background-color: black;
-      left: calc(var(--space-md) * -1);
+      padding: var(--spacing-md);
+      background-color: var(--color-bg);
+      left: calc(var(--spacing-md) * -1);
       display: flex;
       flex-direction: column;
       gap: 12px;
       display: none;
       a {
         white-space: nowrap;
+        // color: white;
+        // &:hover {
+        //   color: var(--color-accent);
+        // }
       }
     }
   }
@@ -69,6 +76,10 @@ header {
       margin: 0;
       ul {
         gap: toRem(70);
+        .has-submenu > a {
+          // color: green;
+          pointer-events: none;
+        }
       }
     }
   }
@@ -87,10 +98,14 @@ header {
     }
     .burger-wrapper {
       z-index: 10;
-      width: toRem(30);
+      width: 30px;
       height: toRem(25);
-      margin: auto;
-
+      // margin: auto;
+      margin-left: auto;
+      .burger {
+        @include mixins.burger(30px, 1px, 6px, var(--color-primary));
+        transform: translateY(10px);
+      }
       &.is-active {
         .burger {
           @include mixins.burger-to-cross;
@@ -99,30 +114,23 @@ header {
           display: block;
         }
       }
-      .burger {
-        transform: translateY(10px);
-        @include mixins.burger(30px, 1px, 6px, white);
-      }
     }
 
     nav {
       position: fixed;
-      background-color: black;
+      background-color: var(--color-secondary);
+      // color: ;
       inset: 0;
       z-index: 0;
       padding: toRem(16);
       padding-top: var(--header-height);
       display: none;
-      li:hover .sub-menu {
-        display: block;
-      }
-      & > ul {
+      ul {
         flex-direction: column;
+        // justify-content: start !important;
+        align-items: start !important;
         gap: 1em;
-
         .sub-menu {
-          padding: 0;
-          padding-left: 2em;
           display: block;
           position: initial;
           padding-top: 0;

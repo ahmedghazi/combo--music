@@ -6,9 +6,9 @@
   --color-bg: #fff;
   --color-primary: #000;
   --color-secondary: #fff;
-  --color-hover: #006d75;
+  --color-hover: #333;
   --color-muted: #999999;
-  --color-accent: #8ea965;
+  --color-accent: #e74011;
 
   --font-primary:
     "NTBau-Regular", "Helvetica Neue", "HelveticaNeueRoman",
@@ -19,26 +19,25 @@
     "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular",
     "Helvetica", "Arial", sans-serif;
   --font-secondary:
-    "ABCCamera-Medium", "Helvetica Neue", "HelveticaNeueRoman",
-    "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular",
-    "Helvetica", "Arial", sans-serif;
+    "NTBau-Bold", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman",
+    "Helvetica Neue Roman", "TeXGyreHerosRegular", "Helvetica", "Arial",
+    sans-serif;
 
-  --space-xs: 0.4em; /*5*/
-  --space-sm: 0.625em; /*10*/
-  --space-md: 1.25rem; /*20*/
-  --space-lg: 1.875rem; /*30*/
-  --space-50: 3.125rem; /*30*/
-  --space-xl: 3.75rem; /*60*/
-  --space-xxl: 6.25rem; /*100*/
+  --spacing-xs: 0.4em;
+  --spacing-sm: 0.625em;
+  --spacing-md: 1.25rem;
+  --spacing-lg: 1.875rem;
+  --spacing-50: 3.125rem;
+  --spacing-xl: 3.75rem;
+  --spacing-xxl: 6.25rem;
 
-  --space-m-md: 1.25rem; /*20*/
+  --spacing-m-md: 1.25rem;
 
-  --text-sm: 0.86666667rem; /*13px*/
-  --text-md: 1.25rem; /*16px*/
-  --text-lg: 1.25rem; /* 20*/
-  --text-2lg: 1.875rem; /* 30*/
-  --text-xl: 3.125rem; /* 50*/
-
+  --text-sm: 0.86666667rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.25rem;
+  --text-2lg: 1.875rem;
+  --tex-xl: 3.125rem;
   --text-m-sm: 0.86666667rem;
   --text-m-md: 1.333rem;
   --text-m-lg: 1.333rem;
