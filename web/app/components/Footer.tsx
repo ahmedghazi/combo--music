@@ -5,9 +5,10 @@ import Image from "next/image";
 import { PortableText } from "next-sanity";
 import AOS from "./ui/AOS";
 import MailJet from "./ui/MailJet";
-import { _localizeField } from "../sanity-api/utils";
+import { _linkResolver, _localizeField } from "../sanity-api/utils";
 import portableTextComponents from "../sanity-api/portableTextComponents";
 import { urlFor } from "../sanity-api/sanity-utils";
+import Link from "next/link";
 
 type Props = {
   settings: Settings;
@@ -66,6 +67,11 @@ const Footer = ({ settings }: Props) => {
                       rel='noopener noreferrer'>
                       {item.label}
                     </a>
+                  )}
+                  {item.link && item.label && item._type === "linkInternal" && (
+                    <Link href={_linkResolver(item.link)}>
+                      {_localizeField(item.label)}
+                    </Link>
                   )}
                 </li>
               ))}
