@@ -1,9 +1,11 @@
 import React from "react";
 import { PortableText } from "@portabletext/react";
 import clsx from "clsx";
-import { TextUI } from "@/app/types/schema";
-import { _localizeField } from "@/app/sanity-api/utils";
+import { SanityReference, TextUI } from "@/app/types/schema";
+import { SanityImageAsset } from "sanity-codegen";
 import AOS from "../ui/AOS";
+import { stegaClean } from "@sanity/client/stega";
+import { _localizeField } from "@/app/sanity-api/utils";
 import portableTextComponents from "@/app/sanity-api/portableTextComponents";
 
 type Props = {
@@ -11,15 +13,17 @@ type Props = {
 };
 
 const ModuleTextUI = ({ input }: Props) => {
+  const rawLook = stegaClean(input.look);
   const {
     look,
     title,
+    titleCentered,
     text,
     backgroundColor,
     backgroundImage,
     foregroundColor,
   } = input;
-  console.log(input);
+  // console.log(input);
 
   const style = {
     "--backgroundColor": backgroundColor,
@@ -36,8 +40,17 @@ const ModuleTextUI = ({ input }: Props) => {
 
         <div className='row center-xs'>
           <div className='col-md-10 col-xs-12'>
-            {!look ||
-              (look === "default" && (
+            {rawLook === "default" && (
+              <>
+                {title && (
+                  <AOS>
+                    <div className={titleCentered ? "text-center" : ""}>
+                      <h2 className={clsx("headline")}>
+                        {_localizeField(title)}
+                      </h2>
+                    </div>
+                  </AOS>
+                )}
                 <div className='text mx-auto'>
                   {text && (
                     <AOS>
@@ -48,12 +61,17 @@ const ModuleTextUI = ({ input }: Props) => {
                     </AOS>
                   )}
                 </div>
-              ))}
+              </>
+            )}
             {look === "offset" && (
               <div className='mx-auto'>
                 {title && (
                   <AOS>
-                    <h2 className='headline'>{_localizeField(title)}</h2>
+                    <div className={titleCentered ? "text-center" : ""}>
+                      <h2 className={clsx("headline")}>
+                        {_localizeField(title)}
+                      </h2>
+                    </div>
                   </AOS>
                 )}
 
@@ -77,7 +95,11 @@ const ModuleTextUI = ({ input }: Props) => {
               <>
                 {title && (
                   <AOS>
-                    <h2 className='headline'>{_localizeField(title)}</h2>
+                    <div className={titleCentered ? "text-center" : ""}>
+                      <h2 className={clsx("headline")}>
+                        {_localizeField(title)}
+                      </h2>
+                    </div>
                   </AOS>
                 )}
                 {text && (
