@@ -40,6 +40,17 @@ export const SETTINGS_QUERY = groq`*[_type == "settings"][0]{
           }
         }
       },
+      navSecondary[]{
+        ...,
+        _type == 'linkInternal' => {
+          ...,
+          link->{
+            _type,
+            slug,
+            subMenu
+          },
+        },
+      },
       comboLogo{
         ...,
 			  asset->
