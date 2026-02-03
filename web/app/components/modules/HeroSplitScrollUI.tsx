@@ -22,6 +22,12 @@ const ModuleHeroSplitScrollUI = ({ input }: Props) => {
   const { isMobile } = useDeviceDetect();
   const scale = isMobile ? 0.2 : 0.4;
 
+  const onScroll = (val: number) => {
+    // const nextVal = rotate + 180 * val;
+    // console.log(val);
+    setRotate(val);
+  };
+
   useEffect(() => {
     if (!ready) return;
     if (ref && ref.current) {
@@ -40,12 +46,6 @@ const ModuleHeroSplitScrollUI = ({ input }: Props) => {
       infinitScrollOnePage(ref.current, itemsRight, "up", onScroll, true);
     }
   }, [ready]);
-
-  const onScroll = (val: number) => {
-    // const nextVal = rotate + 180 * val;
-    // console.log(val);
-    setRotate(val);
-  };
 
   const _handleImagesLoaded = () => {
     setLoadCount((prev) => prev + 1);

@@ -14,7 +14,7 @@
 //   input: ImageUI;
 // };
 
-// const ModuleImageUI = ({ input }: Props) => {
+// const ModuleImageUI = ({ input }: Props): JSX.Element => {
 //   const { image, width, offset } = input;
 
 //   return (
