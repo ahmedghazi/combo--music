@@ -34,9 +34,9 @@ const CookieConsent = ({ legals }: Props) => {
   }
 
   return (
-    <div className="cookies ">
-      <div className="inner ">
-        <div className="mb-md">
+    <div className='cookies '>
+      <div className='inner '>
+        <div className='mb-md'>
           Ce site internet utilise des cookies. Nous utilisons des cookies sur
           notre site pour améliorer votre expérience de navigation.{" "}
           {legals && (
@@ -45,14 +45,13 @@ const CookieConsent = ({ legals }: Props) => {
             </Link>
           )}
         </div>
-        <div className="flex gap-1e">
+        <div className='flex gap-md'>
           <button
-            className="btn--pill- underline"
-            onClick={() => refuseCookie()}
-          >
+            className='btn--pill- underline'
+            onClick={() => refuseCookie()}>
             REFUSER
           </button>
-          <button className="btn--pill" onClick={() => acceptCookie()}>
+          <button className='btn--pill' onClick={() => acceptCookie()}>
             ACCEPTER
           </button>
         </div>

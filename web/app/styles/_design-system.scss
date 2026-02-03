@@ -4,7 +4,7 @@ div {
   position: relative;
 }
 .cartouche {
-  padding: 0.4em toRem(60);
+  padding: 0.4em mixins.toRem(60);
   font-family: var(--font-primary-mono);
   background-color: black;
   color: white;
@@ -17,7 +17,7 @@ div {
 }
 .btn--pill {
   border: var(--border);
-  padding: 0 toRem(30) 0.1em;
+  padding: 0 mixins.toRem(30) 0.1em;
   border-radius: 2em;
   text-align: center;
   display: inline-block;
@@ -108,7 +108,7 @@ div {
 
 .summary-detail {
   .summary {
-    padding: toRem(30) 0;
+    padding: mixins.toRem(30) 0;
     .icon-arrow {
       position: absolute;
       right: var(--spacing-50);
