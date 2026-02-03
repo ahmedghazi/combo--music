@@ -59,8 +59,8 @@
   }
   .toggle-muted {
     position: absolute;
-    right: var(--space-xs);
-    bottom: var(--space-sm);
+    right: var(--spacing-xs);
+    bottom: var(--spacing-sm);
     font-size: var(--text-xs);
     z-index: 2;
   }

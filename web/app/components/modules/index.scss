@@ -46,6 +46,9 @@
         .text {
           text-align: left;
         }
+        .text {
+          position: relative;
+        }
         &.is-columns {
           h2 {
             text-align: center;
