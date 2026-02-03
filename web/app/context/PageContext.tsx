@@ -27,19 +27,10 @@ export const PageContextProvider = (props: PageContextProps) => {
     pathname,
   };
 
-  useEffect(() => {
-    _format();
-    window.addEventListener("resize", _format);
-
-    return () => {
-      window.removeEventListener("resize", _format);
-    };
-  }, []);
-
   const _format = () => {
     // const wh = window.innerHeight;
 
-    let vh = window.innerHeight * 0.01;
+    const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
     // document.documentElement.style.setProperty("--app-height", wh + "px");
 
@@ -50,10 +41,19 @@ export const PageContextProvider = (props: PageContextProps) => {
 
       document.documentElement.style.setProperty(
         "--header-height",
-        headerBounding.height + "px"
+        headerBounding.height + "px",
       );
     }
   };
+
+  useEffect(() => {
+    _format();
+    window.addEventListener("resize", _format);
+
+    return () => {
+      window.removeEventListener("resize", _format);
+    };
+  }, []);
 
   return (
     <PageContext.Provider value={{ settings, isInfos, setIsInfos }}>

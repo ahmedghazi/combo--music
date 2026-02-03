@@ -25,7 +25,7 @@ const LinkTransition = ({
   const router = useRouter();
 
   const _handleTransition = async (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
     e.preventDefault();
 
@@ -46,7 +46,8 @@ const LinkTransition = ({
       onClick={_handleTransition}
       href={href}
       className={`${className} ${cta ? "btn--pill" : ""}`}
-      {...props}>
+      {...props}
+    >
       {children}
     </Link>
   );

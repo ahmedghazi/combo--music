@@ -6,7 +6,6 @@ import {
   HeroSplitUI,
   HeroUI,
   ImageUI,
-  Landing,
   ListCardImageTextUI,
   ListLieuUI,
   ListLModulaireUI,
@@ -22,26 +21,6 @@ import {
 import Modules from "./modules";
 import { SanityKeyed } from "sanity-codegen";
 
-/*
-  modules?: Array<
-    | SanityKeyed<TextUI>
-    | SanityKeyed<TextImageUI>
-    | SanityKeyed<HeroUI>
-    | SanityKeyed<ContactsUI>
-    | SanityKeyed<ListCardImageTextUI>
-    | SanityKeyed<ListLieuUI>
-    | SanityKeyed<ListStudioUI>
-    | SanityKeyed<ListLModulaireUI>
-    | SanityKeyed<ListPageUI>
-    | SanityKeyed<ImageUI>
-    | SanityKeyed<MarqueeUI>
-    | SanityKeyed<SplitImageTextUI>
-    | SanityKeyed<CallOutUI>
-    | SanityKeyed<HeroSplitScrollUI>
-    | SanityKeyed<HeroSplitUI>
-    | SanityKeyed<SliderCardImageTextUI>
-  >;
-*/
 type Props = {
   modules: Array<
     | SanityKeyed<TextUI>
@@ -56,6 +35,7 @@ type Props = {
     | SanityKeyed<ImageUI>
     | SanityKeyed<MarqueeUI>
     | SanityKeyed<SplitImageTextUI>
+    | SanityKeyed<SliderUI>
     | SanityKeyed<CallOutUI>
     | SanityKeyed<HeroSplitScrollUI>
     | SanityKeyed<HeroSplitUI>

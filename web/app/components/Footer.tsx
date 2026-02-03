@@ -4,7 +4,6 @@ import { Settings } from "../types/schema";
 import Image from "next/image";
 import { PortableText } from "next-sanity";
 import AOS from "./ui/AOS";
-import MailJet from "./ui/MailJet";
 import { _linkResolver, _localizeField } from "../sanity-api/utils";
 import portableTextComponents from "../sanity-api/portableTextComponents";
 import { urlFor } from "../sanity-api/sanity-utils";

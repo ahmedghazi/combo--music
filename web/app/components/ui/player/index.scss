@@ -1,9 +1,15 @@
-// @use "../../../styles/variables" as *;
+// @import "../../../styles/variables";
 // @import 'timeline-controls';
 
 .video-wrapper {
   height: 100%;
-
+  // &:fullscreen {
+  //   .inner {
+  //     aspect-ratio: unset;
+  //     height: 100%;
+  //     width: 100%;
+  //   }
+  // }
   max-height: calc(var(--vh) * 100);
   overflow: hidden;
 
@@ -27,6 +33,9 @@
     right: 0;
     z-index: 1;
     cursor: pointer;
+    // cursor: url("data:image/svg+xml,%3Csvg width='73' height='90' viewBox='0 0 73 90' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M73 45.1134L-3.93402e-06 90L0 -3.19093e-06L73 45.1134Z' fill='%2314182D'/%3E%3C/svg%3E%0A")
+    //     36 45,
+    //   pointer;
 
     .icon-play {
       cursor:

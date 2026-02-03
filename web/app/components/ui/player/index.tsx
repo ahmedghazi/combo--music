@@ -217,7 +217,7 @@ const VideoWrapper: React.FC<InputProps> = ({
         className={clsx(
           "video-wrapper bg-black h-full ",
           autoplay && "is-autoplay",
-          video.playing ? "is-playing" : "is-pause",
+          video.playing ? "is-playing" : "is-pause"
         )}
         ref={ref}>
         {url && (
@@ -227,7 +227,7 @@ const VideoWrapper: React.FC<InputProps> = ({
             <ReactPlayer
               ref={playerRef}
               className={clsx(
-                "react-player",
+                "react-player"
                 // autoplay ? "pointer-events-none" : ""
               )}
               url={url}
@@ -251,6 +251,57 @@ const VideoWrapper: React.FC<InputProps> = ({
             />
           </div>
         )}
+
+        {/* {!video.playing && (
+          <div className='inset-0 absolute'>
+            <Figure asset={thumbnail} width={600} />
+          </div>
+        )} */}
+
+        {/* <div className='controls flex'>
+          <button
+            className='cartouche cartouche--gray btn-play'
+            onClick={_togglePlayPause}
+            title='play'>
+            <svg
+              width='15'
+              height='19'
+              viewBox='0 0 15 19'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'>
+              <path
+                d='M15 9.5L0.75 18.5933L0.75 0.406734L15 9.5Z'
+                fill='black'
+              />
+            </svg>
+          </button>
+          <button
+            className='cartouche cartouche--gray btn-pause'
+            onClick={_togglePlayPause}
+            title='pause'>
+            <svg
+              width='13'
+              height='16'
+              viewBox='0 0 13 16'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'>
+              <rect width='4' height='16' fill='black' />
+              <rect x='9' width='4' height='16' fill='black' />
+            </svg>
+          </button>
+          <TimelineControls setSeek={setSeek} />
+        </div> */}
+
+        {/* {autoplay && video.playing && (
+          <button
+            className={clsx(
+              "toggle-muted cartouche",
+              video.muted ? "is-active" : ""
+            )}
+            onClick={_toggleMuted}>
+            {video.muted ? "SOUND OFF" : "SOUND ON"}
+          </button>
+        )} */}
       </div>
     </VideoContext.Provider>
   );

@@ -8,6 +8,7 @@ import { getSettings } from "./sanity-api/sanity-queries";
 import { LocaleContextProvider } from "./context/LocaleContext";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
+import CookieConsent from "./components/ui/CookieConsent";
 
 export const metadata = {
   metadataBase: new URL(website.url),
@@ -27,16 +28,17 @@ export default async function RootLayout({
   return (
     <html lang='fr'>
       <body className={"is-loading"} data-theme='theme-xyz'>
-        <div id='page'>
-          <LocaleContextProvider>
-            <PageContextProvider>
+        <LocaleContextProvider>
+          <PageContextProvider>
+            <div id='page'>
               <Header settings={settings} />
               <main>{children}</main>
               <Footer settings={settings} />
               {(await draftMode()).isEnabled && <VisualEditing />}
-            </PageContextProvider>
-          </LocaleContextProvider>
-        </div>
+              <CookieConsent legals={settings.legalsUrl} />
+            </div>
+          </PageContextProvider>
+        </LocaleContextProvider>
       </body>
     </html>
   );
