@@ -6,13 +6,13 @@ import { useInView } from "react-intersection-observer";
 import website from "@/app/config/website";
 import clsx from "clsx";
 // import screenfull from "screenfull"
-// import { BaseReactPlayerProps } from "react-player/base";
+import { BaseReactPlayerProps } from "react-player/base";
 import { animate } from "framer-motion";
-// import TimelineControls from "./TimelineControls";
-// import Figure from "../Figure";
+import TimelineControls from "./TimelineControls";
+import "./index.scss";
+import Figure from "../Figure";
 import { SanityImageAsset } from "sanity-codegen";
 import { SanityReference } from "@/app/types/schema";
-import "./index.scss";
 // import { subscribe } from "pubsub-js";
 
 type InputProps = {
@@ -251,57 +251,6 @@ const VideoWrapper: React.FC<InputProps> = ({
             />
           </div>
         )}
-
-        {/* {!video.playing && (
-          <div className='inset-0 absolute'>
-            <Figure asset={thumbnail} width={600} />
-          </div>
-        )} */}
-
-        {/* <div className='controls flex'>
-          <button
-            className='cartouche cartouche--gray btn-play'
-            onClick={_togglePlayPause}
-            title='play'>
-            <svg
-              width='15'
-              height='19'
-              viewBox='0 0 15 19'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'>
-              <path
-                d='M15 9.5L0.75 18.5933L0.75 0.406734L15 9.5Z'
-                fill='black'
-              />
-            </svg>
-          </button>
-          <button
-            className='cartouche cartouche--gray btn-pause'
-            onClick={_togglePlayPause}
-            title='pause'>
-            <svg
-              width='13'
-              height='16'
-              viewBox='0 0 13 16'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'>
-              <rect width='4' height='16' fill='black' />
-              <rect x='9' width='4' height='16' fill='black' />
-            </svg>
-          </button>
-          <TimelineControls setSeek={setSeek} />
-        </div> */}
-
-        {/* {autoplay && video.playing && (
-          <button
-            className={clsx(
-              "toggle-muted cartouche",
-              video.muted ? "is-active" : ""
-            )}
-            onClick={_toggleMuted}>
-            {video.muted ? "SOUND OFF" : "SOUND ON"}
-          </button>
-        )} */}
       </div>
     </VideoContext.Provider>
   );

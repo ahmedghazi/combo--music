@@ -663,6 +663,13 @@ export type LinkInternal = {
    *
    */
   link?: SanityReference<PageModulaire | Home | Studio>;
+
+  /**
+   * cta — `boolean`
+   *
+   * Look Bouton avec outline
+   */
+  cta?: boolean;
 };
 
 export type LinkModal = {

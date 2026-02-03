@@ -24,7 +24,7 @@
     "react-dom": "19.2.3",
     "react-fast-marquee": "^1.6.5",
     "react-intersection-observer": "^10.0.2",
-    "react-player": "^3.4.0",
+    "react-player": "^2.16.0",
     "react-slick": "^0.31.0",
     "sanity-codegen": "^0.9.8",
     "sass": "^1.97.3",
