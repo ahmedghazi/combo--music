@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Figure, HeroSplitScrollUI } from "@/app/types/schema";
+// import { urlFor } from "@/app/sanity-api/sanity-utils";
 import Image from "next/image";
-import { _localizeField } from "@/app/sanity-api/utils";
 import useDeviceDetect from "@/app/hooks/useDeviceDetect";
 import { urlFor } from "@/app/sanity-api/sanity-utils";
 import { infinitScrollOnePage } from "@/app/utils/infinite-scroll-plugin-one-page";
@@ -22,12 +22,6 @@ const ModuleHeroSplitScrollUI = ({ input }: Props) => {
   const { isMobile } = useDeviceDetect();
   const scale = isMobile ? 0.2 : 0.4;
 
-  const onScroll = (val: number) => {
-    // const nextVal = rotate + 180 * val;
-    // console.log(val);
-    setRotate(val);
-  };
-
   useEffect(() => {
     if (!ready) return;
     if (ref && ref.current) {
@@ -46,6 +40,12 @@ const ModuleHeroSplitScrollUI = ({ input }: Props) => {
       infinitScrollOnePage(ref.current, itemsRight, "up", onScroll, true);
     }
   }, [ready]);
+
+  const onScroll = (val: number) => {
+    // const nextVal = rotate + 180 * val;
+    // console.log(val);
+    setRotate(val);
+  };
 
   const _handleImagesLoaded = () => {
     setLoadCount((prev) => prev + 1);
@@ -66,24 +66,22 @@ const ModuleHeroSplitScrollUI = ({ input }: Props) => {
           {itemsLeft &&
             itemsLeft.map((item: Figure | any, i: number) => (
               <article className='item' key={i}>
-                <div className='inner'>
-                  <Image
-                    src={urlFor(item?.image.asset, 1500)}
-                    alt={item.caption || ""}
-                    priority={true}
-                    width={item?.image.asset.metadata.dimensions.width}
-                    height={item?.image.asset.metadata.dimensions.height}
-                    blurDataURL={item?.image.asset?.metadata?.lqip}
-                    placeholder='blur'
-                    onLoad={_handleImagesLoaded}
-                  />
-                  <div className='title headline'>
-                    {ready ? (
-                      <span>{item.caption} </span>
-                    ) : (
-                      <span>{loadCount}</span>
-                    )}
-                  </div>
+                <Image
+                  src={urlFor(item?.image.asset, 1500)}
+                  alt={item.caption || ""}
+                  priority={true}
+                  width={item?.image.asset.metadata.dimensions.width}
+                  height={item?.image.asset.metadata.dimensions.height}
+                  blurDataURL={item?.image.asset?.metadata?.lqip}
+                  placeholder='blur'
+                  onLoad={_handleImagesLoaded}
+                />
+                <div className='title headline'>
+                  {ready ? (
+                    <span>{item.caption} </span>
+                  ) : (
+                    <span>{loadCount}</span>
+                  )}
                 </div>
               </article>
             ))}
@@ -92,24 +90,22 @@ const ModuleHeroSplitScrollUI = ({ input }: Props) => {
           {itemsRight &&
             itemsRight.map((item: Figure | any, i: number) => (
               <article className='item' key={i}>
-                <div className='inner'>
-                  <Image
-                    src={urlFor(item?.image.asset, 1500)}
-                    alt={item.caption || ""}
-                    priority={true}
-                    width={item?.image.asset.metadata.dimensions.width}
-                    height={item?.image.asset.metadata.dimensions.height}
-                    blurDataURL={item?.image.asset?.metadata?.lqip}
-                    placeholder='blur'
-                    onLoad={_handleImagesLoaded}
-                  />
-                  <div className='title headline'>
-                    {ready ? (
-                      <span>{item.caption} </span>
-                    ) : (
-                      <span>{totalImages}</span>
-                    )}
-                  </div>
+                <Image
+                  src={urlFor(item?.image.asset, 1500)}
+                  alt={item.caption || ""}
+                  priority={true}
+                  width={item?.image.asset.metadata.dimensions.width}
+                  height={item?.image.asset.metadata.dimensions.height}
+                  blurDataURL={item?.image.asset?.metadata?.lqip}
+                  placeholder='blur'
+                  onLoad={_handleImagesLoaded}
+                />
+                <div className='title headline'>
+                  {ready ? (
+                    <span>{item.caption} </span>
+                  ) : (
+                    <span>{totalImages}</span>
+                  )}
                 </div>
               </article>
             ))}

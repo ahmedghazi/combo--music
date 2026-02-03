@@ -87,6 +87,12 @@
   --text-sm: var(--text-sm);
   --text-md: var(--text-md);
   --text-lg: var(--text-lg);
+  --text-2lg: var(--text-2lg);
+  --text-xl: var(--text-xl);
+  --text-m-sm: var(--text-m-sm);
+  --text-m-lg: var(--text-m-lg);
+  --text-m-2lg: var(--text-m-2lg);
+  --text-m-xl: var(--text-m-xl);
 
   --cubic: var(--cubic);
 

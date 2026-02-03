@@ -3,7 +3,7 @@
 // import { VideoWrapper } from "@/app/components/ui/player";
 // import { Embed, LocaleBlockContent } from "@/app/types/schema";
 // import { PortableText } from "@portabletext/react";
-// import portableTextComponents from "@/app/utils/portableTextComponents";
+// import portableTextComponents from "@/app/sanity-api/portableTextComponents";
 // import { _localizeField } from "@/app/sanity-api/utils";
 
 // type Props = {

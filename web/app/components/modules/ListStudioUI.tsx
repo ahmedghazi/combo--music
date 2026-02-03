@@ -25,7 +25,7 @@ const ModuleListStudioUI = ({ input }: Props) => {
   const _onResize = useCallback(() => {
     if (detail) {
       const activeItem = document.querySelector<HTMLElement>(
-        ".grid article.is-active",
+        ".grid article.is-active"
       );
 
       // console.log(activeItem);
@@ -108,7 +108,7 @@ const ModuleListStudioUI = ({ input }: Props) => {
     //   activeItem.style.paddingBottom = "0";
     // }
     const articles: NodeListOf<HTMLElement> = document.querySelectorAll(
-      ".grid article.is-active",
+      ".grid article.is-active"
     );
     articles.forEach((el) => {
       el.classList.remove("is-active");
@@ -118,12 +118,13 @@ const ModuleListStudioUI = ({ input }: Props) => {
   };
 
   return (
-    <section className='module module--list-studio-ui '>
+    <section className="module module--list-studio-ui ">
       <div
         className={clsx(
           "grid gap-gutter grid-card",
-          `md:grid-cols-${input.gridSize || 3}`,
-        )}>
+          `md:grid-cols-${input.gridSize || 3}`
+        )}
+      >
         {input.items?.map((item, i) => (
           <CardStudio
             key={i}
@@ -135,10 +136,10 @@ const ModuleListStudioUI = ({ input }: Props) => {
           />
         ))}
       </div>
-      <div className='detail detail--studio' ref={detailRef}>
+      <div className="detail detail--studio" ref={detailRef}>
         {detail && (
-          <div className='inner'>
-            <button className='btn--close' onClick={_handleClose}>
+          <div className="inner">
+            <button className="btn--close" onClick={_handleClose}>
               fermer
             </button>
             <ContentStudio input={detail} />

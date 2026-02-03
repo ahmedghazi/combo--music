@@ -38,15 +38,10 @@ html {
 }
 @media all and (min-width: 1080px) {
   html {
+    font-size: 12px;
     font-size: 14px;
-    // font-size: 20px;
   }
 }
-// @media all and (min-width: 1920px) {
-//   html {
-//     font-size: 1vw;
-//   }
-// }
 
 .italic {
   font-style: italic;
@@ -86,14 +81,13 @@ a[aria-current="page"] {
   &.is-active,
   &.is-current-page,
   &[aria-current="page"] {
-    // color: var(--color-accent);
-    text-decoration: underline;
+    color: var(--color-accent);
   }
 }
 
 /* Text elements */
 .text {
-  max-width: 48rem;
+  max-width: unset;
   figure {
     margin-bottom: 1em;
   }
@@ -110,9 +104,28 @@ p,
   }
   a {
     font-family: var(--font-primary-mono);
+    &.btn--pill {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 100%;
+    }
+    &:not(.btn--pill)::after {
+      content: "↗";
+      display: inline-block;
+      margin-left: 0.4em;
+    }
   }
-  &.headline a {
-    font-family: var(--font-secondary);
+  &.md\:text-2lg,
+  &.headline {
+    line-height: 1;
+  }
+  &.headline {
+    a {
+      font-family: var(--font-secondary);
+      &.btn--pill {
+        font-family: var(--font-primary-mono);
+      }
+    }
   }
 }
 .ellipsis {
@@ -132,7 +145,7 @@ p,
   p {
     // text-indent: 1em;
     margin-bottom: 1em;
-    line-height: 1.2;
+    line-height: 1.4;
     @media all and (min-width: var(--screen-md)) {
       line-height: 1.12;
     }
@@ -182,7 +195,7 @@ hr {
   background-color: var(--color-primary);
   border: 0;
   height: 1px;
-  margin: 1.1em calc(var(--spacing-sm) * -1);
+  margin: 1.1em calc(var(--space-sm) * -1);
 }
 
 pre {
