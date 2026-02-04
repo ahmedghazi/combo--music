@@ -23,8 +23,6 @@ const ModuleHeroSplitScrollUI = ({ input }: Props) => {
   const scale = isMobile ? 0.2 : 0.4;
 
   const onScroll = (val: number) => {
-    // const nextVal = rotate + 180 * val;
-    // console.log(val);
     setRotate(val);
   };
 
