@@ -16,7 +16,7 @@ type MarqueeProps = {
   input: MarqueeUI;
 };
 
-const ModuleMarqueeUI = ({ input }: MarqueeProps): JSX.Element => {
+const ModuleMarqueeUI = ({ input }: MarqueeProps) => {
   // console.log(input);
   return (
     // <Container

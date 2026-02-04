@@ -9,7 +9,7 @@
 //   input: TextImageUI;
 // };
 
-// const ModuleTexteImageUI = ({ input }: Props): JSX.Element => {
+// const ModuleTexteImageUI = ({ input }: Props) => {
 //   const { title, text, image, width, offset } = input;
 //   // console.log(input);
 //   return (
