@@ -48,6 +48,9 @@ export const PageContextProvider = (props: PageContextProps) => {
 
   useEffect(() => {
     _format();
+    setTimeout(() => {
+      _format();
+    }, 150);
     window.addEventListener("resize", _format);
 
     return () => {

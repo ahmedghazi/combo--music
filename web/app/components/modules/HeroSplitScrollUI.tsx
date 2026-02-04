@@ -47,12 +47,13 @@ const ModuleHeroSplitScrollUI = ({ input }: Props) => {
     }
   }, [ready]);
 
-  const _handleImagesLoaded = () => {
+  const _handleImagesLoaded = (index: number) => {
+    // console.log("image loaded", index);
     setLoadCount((prev) => prev + 1);
   };
 
   useEffect(() => {
-    // console.log(loadCount);
+    // console.log(loadCount, totalImages);
     setReady(loadCount === totalImages);
   }, [loadCount, totalImages]);
 
@@ -74,7 +75,9 @@ const ModuleHeroSplitScrollUI = ({ input }: Props) => {
                   height={item?.image.asset.metadata.dimensions.height}
                   blurDataURL={item?.image.asset?.metadata?.lqip}
                   placeholder='blur'
-                  onLoad={_handleImagesLoaded}
+                  onLoad={() => {
+                    _handleImagesLoaded(i);
+                  }}
                 />
                 <div className='title headline'>
                   {ready ? (
@@ -98,7 +101,9 @@ const ModuleHeroSplitScrollUI = ({ input }: Props) => {
                   height={item?.image.asset.metadata.dimensions.height}
                   blurDataURL={item?.image.asset?.metadata?.lqip}
                   placeholder='blur'
-                  onLoad={_handleImagesLoaded}
+                  onLoad={() => {
+                    _handleImagesLoaded(i);
+                  }}
                 />
                 <div className='title headline'>
                   {ready ? (
