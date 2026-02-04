@@ -91,9 +91,9 @@ const Modules = ({ input }: Props) => {
           | SanityKeyed<HeroSplitScrollUI>
           | SanityKeyed<HeroSplitUI>
           | SanityKeyed<SliderCardImageTextUI>,
-        i: number
+        i: number,
       ) => {
-        console.log(module._type);
+        // console.log(module._type);
         switch (module._type) {
           case "textUI":
             return <ModuleTextUI key={module._key} input={module} />;
@@ -136,12 +136,12 @@ const Modules = ({ input }: Props) => {
           default:
             return null;
         }
-      }
+      },
     );
     return _modules;
   };
 
-  return <div className="modules">{_renderModules()}</div>;
+  return <div className='modules'>{_renderModules()}</div>;
 };
 
 export default Modules;

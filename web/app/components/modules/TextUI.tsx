@@ -1,8 +1,8 @@
 import React from "react";
 import { PortableText } from "@portabletext/react";
 import clsx from "clsx";
-import { SanityReference, TextUI } from "@/app/types/schema";
-import { SanityImageAsset } from "sanity-codegen";
+import { TextUI } from "@/app/types/schema";
+// import { SanityImageAsset } from "sanity-codegen";
 import AOS from "../ui/AOS";
 import { stegaClean } from "@sanity/client/stega";
 import { _localizeField } from "@/app/sanity-api/utils";
@@ -13,7 +13,7 @@ type Props = {
 };
 
 const ModuleTextUI = ({ input }: Props) => {
-  const rawLook = stegaClean(input.look);
+  // const rawLook = stegaClean(input.look);
   const {
     look,
     title,
@@ -36,11 +36,11 @@ const ModuleTextUI = ({ input }: Props) => {
   return (
     <section className={clsx("module module--text-ui", `text-${look}`)}>
       <div className={clsx("inner", `is-${look}`)} style={style}>
-        {hasImage && <div className="bg-blend"></div>}
+        {hasImage && <div className='bg-blend'></div>}
 
-        <div className="row center-xs">
-          <div className="col-md-10 col-xs-12">
-            {rawLook === "default" && (
+        <div className='row center-xs'>
+          <div className='col-md-10 col-xs-12'>
+            {look === "default" && (
               <>
                 {title && (
                   <AOS>
@@ -51,7 +51,7 @@ const ModuleTextUI = ({ input }: Props) => {
                     </div>
                   </AOS>
                 )}
-                <div className="text mx-auto">
+                <div className='text mx-auto'>
                   {text && (
                     <AOS>
                       <PortableText
@@ -64,7 +64,7 @@ const ModuleTextUI = ({ input }: Props) => {
               </>
             )}
             {look === "offset" && (
-              <div className="mx-auto">
+              <div className='mx-auto'>
                 {title && (
                   <AOS>
                     <div className={titleCentered ? "text-center" : ""}>
@@ -75,9 +75,9 @@ const ModuleTextUI = ({ input }: Props) => {
                   </AOS>
                 )}
 
-                <div className="row">
-                  <div className="col-md-6 col-md-offset-3 col-xs-12">
-                    <div className="text ">
+                <div className='row'>
+                  <div className='col-md-6 col-md-offset-3 col-xs-12'>
+                    <div className='text '>
                       {text && (
                         <AOS>
                           <PortableText
@@ -104,7 +104,7 @@ const ModuleTextUI = ({ input }: Props) => {
                 )}
                 {text && (
                   <AOS>
-                    <div className="text">
+                    <div className='text'>
                       <PortableText
                         value={_localizeField(text)}
                         components={portableTextComponents}

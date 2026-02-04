@@ -14,6 +14,13 @@
     url("./fonts/NTBau-Mono-Regular.woff2") format("woff2");
   font-display: swap;
 }
+@font-face {
+  font-family: "NTBau-Bold";
+  src:
+    url("./fonts/NTBau-Bold.woff") format("woff"),
+    url("./fonts/NTBau-Bold.woff2") format("woff2");
+  font-display: swap;
+}
 
 //ABCDiatype-Regular
 body {
