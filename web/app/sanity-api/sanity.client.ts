@@ -58,7 +58,6 @@ export async function sanityFetch<QueryResponse>({
 }): Promise<QueryResponse> {
   return client.fetch<QueryResponse>(query, qParams, {
     // cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache",
-    // cache: "no-store",
     cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache",
     next: { tags },
   });
