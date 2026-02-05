@@ -18,11 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-// type PageProps = {
-//   params: {
-//     slug: string;
-//   };
-// };
+export const revalidate = 3600; // revalidate every hour
 
 const HomePage = async function Page() {
   const { isEnabled } = await draftMode();

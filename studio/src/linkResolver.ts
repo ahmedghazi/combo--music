@@ -29,7 +29,7 @@ export const linkResolver: PresentationPluginOptions['resolve'] = {
             title: doc?.title || 'Untitled',
             href: `/${doc?.slug}`,
           },
-          {title: 'Home', href: `/`},
+          // {title: 'Home', href: `/`},
         ],
       }),
     }),

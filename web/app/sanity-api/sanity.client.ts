@@ -17,10 +17,6 @@ const config: ClientConfig = {
   useCdn: process.env.NODE_ENV === "development" ? true : false,
   // perspective: draftMode().isEnabled ? "previewDrafts" : "published",
   token,
-  // stega: {
-  //   enabled: draftMode().isEnabled,
-  //   studioUrl: ,
-  // },
 };
 
 export const sanityConfig = {
@@ -36,7 +32,7 @@ export function getClient(preview?: { token?: string }): SanityClient {
     if (!preview.token) {
       throw new Error("You must provide a token to preview drafts");
     }
-    console.log({ studioUrl });
+    // console.log({ studioUrl });
     return client.withConfig({
       token: preview.token,
       useCdn: false,
@@ -62,7 +58,8 @@ export async function sanityFetch<QueryResponse>({
 }): Promise<QueryResponse> {
   return client.fetch<QueryResponse>(query, qParams, {
     // cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache",
-    cache: "no-store",
+    // cache: "no-store",
+    cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache",
     next: { tags },
   });
 }

@@ -125,8 +125,8 @@ const Modules = ({ input }: Props) => {
             return <ModuleSliderUI key={module._key} input={module} />;
           case "callOutUI":
             return <ModuleCallOutUI key={module._key} input={module} />;
-          case "heroSplitScrollUI":
-            return <ModuleHeroSplitScrollUI key={module._key} input={module} />;
+          // case "heroSplitScrollUI":
+          //   return <ModuleHeroSplitScrollUI key={module._key} input={module} />;
           case "heroSplitUI":
             return <ModuleHeroSplitUI key={module._key} input={module} />;
           case "sliderCardImageTextUI":

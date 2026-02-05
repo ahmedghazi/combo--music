@@ -1,5 +1,7 @@
+"use client";
 import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 type Props = {
   children: ReactNode;
@@ -17,9 +19,8 @@ const AOS = ({
   y = 20,
 }: // onAnimationComplete = null,
 Props) => {
-  // console.log(delay);
   return (
-    <div className="aos">
+    <div className='aos'>
       <motion.div
         initial={{ opacity: opacity ? 0 : 1, y: y }}
         whileInView={{ opacity: 1, y: 0 }}

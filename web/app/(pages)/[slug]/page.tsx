@@ -11,6 +11,8 @@ import { Metadata, NextPage } from "next";
 import { draftMode } from "next/headers";
 import React from "react";
 
+export const revalidate = 3600; // revalidate every hour
+
 type Params = Promise<{ slug: string }>;
 
 type PageProps = {
