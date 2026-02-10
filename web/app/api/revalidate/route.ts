@@ -1,32 +1,42 @@
-import { hookSecret } from "@/app/sanity-api/sanity.api";
-import { revalidateTag } from "next/cache";
-import { type NextRequest, NextResponse } from "next/server";
-import { parseBody } from "next-sanity/webhook";
+import { revalidatePath, revalidateTag } from "next/cache";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: NextRequest) {
+export async function POST(request: NextRequest) {
+  const secret = request.nextUrl.searchParams.get("secret");
+
+  // Vérifie le token secret
+  if (secret !== process.env.REVALIDATE_SECRET) {
+    return NextResponse.json({ message: "Invalid token" }, { status: 401 });
+  }
+
   try {
-    const { body, isValidSignature } = await parseBody<{
-      _type: string;
-      slug?: string | undefined;
-    }>(req, process.env.NEXT_PUBLIC_SANITY_HOOK_SECRET);
+    const body = await request.json();
+    const { slug, type } = body;
 
-    if (!isValidSignature) {
-      return new Response("Invalid Signature", { status: 401 });
+    if (type === "page") {
+      // Revalide une page spécifique
+      revalidatePath(`/${slug}`);
+      // Ou revalide toutes les pages de projets
+      revalidatePath("/");
+
+      return NextResponse.json({
+        revalidated: true,
+        now: Date.now(),
+      });
     }
 
-    if (!body?._type) {
-      return new Response("Bad Request", { status: 400 });
-    }
-
-    revalidateTag(body._type);
-    return NextResponse.json({
-      status: 200,
-      revalidated: true,
-      now: Date.now(),
-      body,
-    });
-  } catch (error: any) {
-    console.error(error);
-    return new Response(error.message, { status: 500 });
+    return NextResponse.json(
+      {
+        message: "Type non reconnu",
+      },
+      { status: 400 },
+    );
+  } catch (err) {
+    return NextResponse.json(
+      {
+        message: "Erreur lors de la revalidation",
+      },
+      { status: 500 },
+    );
   }
 }
