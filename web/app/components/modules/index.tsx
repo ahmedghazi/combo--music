@@ -1,36 +1,6 @@
 "use client";
-import React from "react";
-import dynamic from "next/dynamic";
-// const ModuleTextUI = dynamic(() => import("./TextUI"), { ssr: false });
-// const ModuleHeroUI = dynamic(() => import("./HeroUI"), { ssr: false });
-// const ModuleContactsUI = dynamic(() => import("./ContactsUI"), {
-//   ssr: false,
-// });
-import {
-  CallOutUI,
-  ContactsUI,
-  HeroSplitScrollUI,
-  HeroSplitUI,
-  HeroUI,
-  ImageUI,
-  ListCardImageTextUI,
-  ListLieuUI,
-  ListLModulaireUI,
-  ListStudioUI,
-  ListPageUI,
-  MarqueeUI,
-  SanityKeyed,
-  SliderUI,
-  SplitImageTextUI,
-  TextImageUI,
-  TextUI,
-  SliderCardImageTextUI,
-  TextsUI,
-  ImagesUI,
-  LogosUI,
-} from "../../types/schema";
-
 import "./index.scss";
+import React from "react";
 import ModuleHeroUI from "./HeroUI";
 import ModuleTextUI from "./TextUI";
 import ModuleContactsUI from "./ContactsUI";
@@ -61,16 +31,16 @@ const Modules = ({ modules }: ModulesList) => {
       switch (module._type) {
         case "textUI":
           return <ModuleTextUI key={module._key} input={module} />;
-        case "textsUI":
-          return <ModuleTextsUI key={module._key} input={module} />;
+        // case "textsUI":
+        //   return <ModuleTextsUI key={module._key} input={module} />;
         case "textImageUI":
           return <ModuleTextImageUI key={module._key} input={module} />;
         case "heroUI":
           return <ModuleHeroUI key={module._key} input={module} />;
-        case "imagesUI":
-          return <ModuleImagesUI key={module._key} input={module} />;
-        case "logosUI":
-          return <ModulelogosUI key={module._key} input={module} />;
+        // case "imagesUI":
+        //   return <ModuleImagesUI key={module._key} input={module} />;
+        // case "logosUI":
+        //   return <ModulelogosUI key={module._key} input={module} />;
         case "contactsUI":
           return <ModuleContactsUI key={module._key} input={module} />;
         case "listCardImageTextUI":
