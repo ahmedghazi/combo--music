@@ -31,16 +31,16 @@ const Modules = ({ modules }: ModulesList) => {
       switch (module._type) {
         case "textUI":
           return <ModuleTextUI key={module._key} input={module} />;
-        // case "textsUI":
-        //   return <ModuleTextsUI key={module._key} input={module} />;
+        case "textsUI":
+          return <ModuleTextsUI key={module._key} input={module} />;
         case "textImageUI":
           return <ModuleTextImageUI key={module._key} input={module} />;
         case "heroUI":
           return <ModuleHeroUI key={module._key} input={module} />;
-        // case "imagesUI":
-        //   return <ModuleImagesUI key={module._key} input={module} />;
-        // case "logosUI":
-        //   return <ModulelogosUI key={module._key} input={module} />;
+        case "imagesUI":
+          return <ModuleImagesUI key={module._key} input={module} />;
+        case "logosUI":
+          return <ModulelogosUI key={module._key} input={module} />;
         case "contactsUI":
           return <ModuleContactsUI key={module._key} input={module} />;
         case "listCardImageTextUI":
@@ -78,7 +78,7 @@ const Modules = ({ modules }: ModulesList) => {
     return _modules;
   };
 
-  return <div className='modules'>{_renderModules()}</div>;
+  return <div className="modules">{_renderModules()}</div>;
 };
 
 export default Modules;
