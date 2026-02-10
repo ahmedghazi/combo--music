@@ -301,8 +301,10 @@
       }
     }
     &.module--hero-split-ui {
-      .inner {
-        position: relative;
+      .item {
+        .inner {
+          position: relative;
+        }
       }
       img {
         height: calc(var(--vh) * 100 - var(--header-h));
