@@ -1,4 +1,3 @@
-import { NextApiResponse } from "next";
 import { NextRequest, NextResponse } from "next/server";
 import Mailjet from "node-mailjet";
 
@@ -7,13 +6,7 @@ const mailjet = new Mailjet({
   apiSecret: process.env.NEXT_PUBLIC_MAILJET_SECRET || "your-api-secret",
 });
 
-export async function POST(req: NextRequest, res: NextApiResponse) {
-  if (req.method !== "POST") {
-    return new NextResponse(JSON.stringify({ message: "INVALID_METHOD" }), {
-      status: 405,
-      headers: { "Content-Type": "application/json" },
-    });
-  }
+export async function POST(req: NextRequest) {
 
   try {
     const { data } = await req.json(); // res now contains body
