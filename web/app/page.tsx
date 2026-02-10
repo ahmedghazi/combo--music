@@ -18,7 +18,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export const revalidate = 3600; // revalidate every hour
+export const revalidate = 3600;
+// revalidate every hour
 
 const HomePage = async function Page() {
   const { isEnabled } = await draftMode();
@@ -38,7 +39,7 @@ const HomePage = async function Page() {
   if (!data) return notFound();
 
   return (
-    <div className='template template--home' data-template='home'>
+    <div className="template template--home" data-template="home">
       {data.modules && <ContentModulaire modules={data.modules} />}
     </div>
   );

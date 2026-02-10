@@ -1,3 +1,4 @@
+@use "../../mixins";
 @use "../../variables";
 
 .mailjet {
@@ -16,13 +17,13 @@
     border: var(--border);
     width: 100%;
     @media all and (min-width: variables.$md) {
-      max-width: toRem(268);
+      max-width: mixins.toRem(268);
     }
   }
 
   input {
     border: none;
-    padding: toRem(14) var(--spacing-lg);
+    padding: mixins.toRem(14) var(--spacing-lg);
 
     &::placeholder {
       color: var(--color-primary);

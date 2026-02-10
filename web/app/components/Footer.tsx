@@ -4,6 +4,7 @@ import { Settings } from "../types/schema";
 import Image from "next/image";
 import { PortableText } from "next-sanity";
 import AOS from "./ui/AOS";
+import MailJet from "./ui/MailJet";
 import { _linkResolver, _localizeField } from "../sanity-api/utils";
 import portableTextComponents from "../sanity-api/portableTextComponents";
 import { urlFor } from "../sanity-api/sanity-utils";
@@ -16,7 +17,7 @@ type Props = {
 const Footer = ({ settings }: Props) => {
   // const {}
   return (
-    <footer>
+    <footer className={settings.footerDark ? "is-dark" : ""}>
       <div className='grid md:grid-cols-3 gap-lg md:gap-md'>
         <div className='text'>
           {settings?.footerInfos && (

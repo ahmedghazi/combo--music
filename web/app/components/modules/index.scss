@@ -1,6 +1,5 @@
-// @import "../../styles/variables";
-@use "../../styles/variables" as variables;
-@use "../../styles/mixins" as mixins;
+@use "../../styles/variables";
+@use "../../styles/mixins";
 .modules {
   section {
     width: 100%;
@@ -10,10 +9,10 @@
     // &:last-child {
     //   margin-bottom: 0;
     // }
-    scroll-margin-top: var(--header-height);
+    scroll-margin-top: var(--header-h);
     &.module--hero-ui {
       @media all and (min-width: variables.$md) {
-        height: calc(var(--vh) * 100 - var(--header-height));
+        height: calc(var(--vh) * 100 - var(--header-h));
       }
       img {
         object-fit: cover;
@@ -25,17 +24,59 @@
         }
       }
     }
-    &.module--text-ui {
+    &.module--images-ui {
+      .item {
+        .aos,
+        div,
+        figure,
+        img {
+          height: 100% !important;
+        }
+      }
+    }
+    &.module--logos-ui {
+      background-color: transparent;
+      .inner {
+        padding: var(--spacing-50);
+        background-color: var(--backgroundColor, #000);
+        color: var(--color, #fff);
+
+        img {
+          height: 180px !important;
+          width: auto !important;
+          object-fit: contain !important;
+        }
+      }
+    }
+    &.module--text-ui,
+    &.module--texts-ui {
       .inner {
         padding: var(--spacing-50);
         background-color: var(--backgroundColor, #000);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
+        // background-image: url(var(--backgroundImage));
         color: var(--color, #fff);
         // background-attachment: fixed;
         @media all and (max-width: variables.$md) {
           padding: var(--spacing-50) var(--spacing-m-md);
+        }
+        .bg-image,
+        .bg-blend {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          pointer-events: none;
+        }
+        .bg-image {
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+          filter: grayscale(100%);
+        }
+        .bg-blend + div {
+          position: relative;
         }
         .text-center h2 {
           text-align: center;
@@ -66,6 +107,11 @@
             }
           }
         }
+      }
+    }
+    &.module--texts-ui {
+      .text {
+        text-align: left;
       }
     }
     &.module--text-image-ui {
@@ -159,7 +205,7 @@
     }
     &.module--list-studio-ui {
       article.card img {
-        max-height: calc(var(--vh) * 100 - var(--header-height));
+        max-height: calc(var(--vh) * 100 - var(--header-h));
       }
       .headline {
         text-align: center;
@@ -179,9 +225,7 @@
           z-index: 1;
           right: var(--spacing-50);
           // bottom: 0;
-          top: calc(
-            var(--vh) * 100 - var(--header-height) * 2 + var(--spacing-50)
-          );
+          top: calc(var(--vh) * 100 - var(--header-h) * 2 + var(--spacing-50));
           @media all and (max-width: variables.$md) {
             right: var(--spacing-m-md);
           }
@@ -243,7 +287,7 @@
       }
       .panel {
         padding: var(--spacing-50);
-        min-height: calc(var(--vh) * 100 - var(--header-height));
+        min-height: calc(var(--vh) * 100 - var(--header-h));
       }
       @media all and (max-width: variables.$md) {
         text-align: center;
@@ -257,8 +301,11 @@
       }
     }
     &.module--hero-split-ui {
+      .inner {
+        position: relative;
+      }
       img {
-        height: calc(var(--vh) * 100 - var(--header-height));
+        height: calc(var(--vh) * 100 - var(--header-h));
         object-fit: cover;
       }
       .title {
@@ -278,18 +325,21 @@
       }
     }
     &.module--hero-split-scroll-ui {
-      height: calc(var(--vh) * 200 - var(--header-height));
+      height: calc(var(--vh) * 200 - var(--header-h));
       height: calc(var(--vh) * 200);
-      // margin-bottom: calc(var(--vh) * 100 - var(--header-height));
+      // margin-bottom: calc(var(--vh) * 100 - var(--header-h));
       .scroller {
         position: fixed;
         top: 0;
         width: 100%;
         // overflow: hidden;
-        height: calc(var(--vh) * 100 - var(--header-height));
+        height: calc(var(--vh) * 100 - var(--header-h));
         height: calc(var(--vh) * 200);
+        .column {
+          position: relative;
+        }
       }
-      // @media all and (max-width: $md) {
+      // @media all and (max-width: variables.$md) {
       //   .scroller {
       //     height: calc(var(--vh) * 100);
       //   }
@@ -298,10 +348,15 @@
       .item {
         position: absolute;
         width: 100%;
-        height: calc(var(--vh) * 100 - var(--header-height));
+        height: calc(var(--vh) * 100 - var(--header-h));
         will-change: transform;
         opacity: 0;
         transition: opacity 0.2s;
+        .inner {
+          position: relative;
+          height: 100%;
+          width: 100%;
+        }
       }
       img {
         width: 100%;
@@ -350,10 +405,15 @@
 
         @media all and (max-width: variables.$md) {
           padding: var(--spacing-lg) var(--spacing-m-md);
-          gap: 1em;
+          // gap: 1em;
           .md\:grid-cols-4 {
             grid-template-columns: repeat(1, minmax(0, 1fr));
           }
+        }
+      }
+      .is-filtering {
+        .item:not(.is-selected) {
+          display: none;
         }
       }
       .card {

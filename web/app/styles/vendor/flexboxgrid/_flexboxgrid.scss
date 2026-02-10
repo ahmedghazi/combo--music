@@ -2,8 +2,8 @@
 //
 // -- Start editing -- //
 //
-@use "sass:list";
 
+@use "sass:list";
 @use "flex";
 @use "../../variables";
 
@@ -47,7 +47,7 @@ $half-gutter-width: calc(#{$gutter-width} * 0.5);
 
 .row {
   box-sizing: border-box;
-  @include flex.flexbox;
+  @include flex.flexbox();
   @include flex.flex(0, 1, auto);
   @include flex.flex-direction(row);
   @include flex.flex-wrap(wrap);

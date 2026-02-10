@@ -77,6 +77,18 @@ export const textUI = `
 		}
 	}
 `;
+export const textsUI = `
+	_type == 'textsUI' => {
+		...,
+		backgroundImage{
+			...,
+			asset->
+		},
+    items[]{
+      ${blockContent}
+    }
+	}
+`;
 
 export const textImageUI = `
 	_type == 'textImageUI' => {
@@ -98,6 +110,31 @@ export const heroUI = `
 			asset->
 		}
 	}
+`;
+export const imagesUI = `
+  _type == 'imagesUI' => {
+    ...,
+    items[]{
+      ...,
+      image{
+        ...,
+        asset->
+      }
+    }
+  }
+`;
+
+export const logosUI = `
+  _type == 'logosUI' => {
+    ...,
+    items[]{
+      ...,
+      image{
+        ...,
+        asset->
+      }
+    }
+  }
 `;
 
 export const contactsUI = `
@@ -253,7 +290,10 @@ _type == 'listLieuUI' => {
 		modules[]{
 			...,
 			${heroUI},
+      ${imagesUI},
+      ${logosUI},
 			${textUI},
+			${textsUI},
 			${textImageUI},
 			${contactsUI},
 			${listStudioUI},
@@ -273,7 +313,10 @@ _type == 'listLieuUI' => {
 export const modules = `
 	...,
 	${heroUI},
+  ${imagesUI},
+  ${logosUI},
 	${textUI},
+	${textsUI},
 	${textImageUI},
 	${contactsUI},
 	${listStudioUI},

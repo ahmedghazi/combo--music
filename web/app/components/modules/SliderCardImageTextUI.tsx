@@ -12,10 +12,10 @@ const ModuleSliderCardImageTextUI = ({ input }: Props) => {
   const { title, items, gridSize, autoplay } = input;
 
   return (
-    <section className="module module--slider-card-image-text-ui">
-      <div className="inner">
-        <h2 className="headline">{_localizeField(title)}</h2>
-        <div className="slider-container -px-sm">
+    <section className='module module--slider-card-image-text-ui'>
+      <div className='inner'>
+        <h2 className='headline'>{_localizeField(title)}</h2>
+        <div className='slider-container -px-sm'>
           <Slider
             settingsOverride={{
               autoplay: false,
@@ -33,10 +33,9 @@ const ModuleSliderCardImageTextUI = ({ input }: Props) => {
                   },
                 },
               ],
-            }}
-          >
+            }}>
             {items?.map((item, i) => (
-              <div className="slide px-sm" key={i}>
+              <div className='slide px-sm' key={i}>
                 <Card
                   key={i}
                   image={item.image}

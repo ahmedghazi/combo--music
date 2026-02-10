@@ -18,7 +18,7 @@ const Figure = ({ asset, width = 1000, alt = website.title }: Props) => {
         width={asset?.metadata?.dimensions.width || width}
         height={asset?.metadata?.dimensions.height || width}
         alt={alt || ""}
-        sizes="100vw"
+        sizes='100vw'
         style={{
           width: "100%",
           height: "auto",

@@ -7,9 +7,15 @@ import linkExternalTypes from '../misc/linkExternalTypes'
 import ExternalLinkRenderer from '../../src/components/ExternalLinkRenderer'
 import {RxButton} from 'react-icons/rx'
 
-const TextL = (props: any) => <p style={{fontSize: '1.5rem', marginTop: 0}}> {props.children} </p>
-const Text2L = (props: any) => <p style={{fontSize: '1.7rem', marginTop: 0}}> {props.children} </p>
-const TextXL = (props: any) => <p style={{fontSize: '2rem', marginTop: 0}}> {props.children} </p>
+const TextL = (props: any): JSX.Element => (
+  <p style={{fontSize: '1.5rem', marginTop: 0}}> {props.children} </p>
+)
+const Text2L = (props: any): JSX.Element => (
+  <p style={{fontSize: '1.7rem', marginTop: 0}}> {props.children} </p>
+)
+const TextXL = (props: any): JSX.Element => (
+  <p style={{fontSize: '2rem', marginTop: 0}}> {props.children} </p>
+)
 
 const AlignLeftRender = (props: any) => <p style={{textAlign: 'left'}}>{props.children}</p>
 const AlignCenterRender = (props: any) => <p style={{textAlign: 'center'}}>{props.children}</p>

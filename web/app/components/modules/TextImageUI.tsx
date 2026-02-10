@@ -19,15 +19,15 @@ const ModuleTextImageUI = ({ input }: Props) => {
 
   return (
     <section className={clsx("module module--text-image-ui")}>
-      <div className="inner">
+      <div className='inner'>
         <div className={clsx("row", direction)}>
-          <div className="col-md-6 col-xs-12">
+          <div className='col-md-6 col-xs-12'>
             <AOS>
               <h2 className={clsx("headline")}>{_localizeField(title)}</h2>
             </AOS>
             <AOS>
-              <div className="mb-md">
-                <div className="text">
+              <div className='mb-md'>
+                <div className='text'>
                   <PortableText
                     value={_localizeField(text)}
                     components={portableTextComponents}
@@ -36,7 +36,7 @@ const ModuleTextImageUI = ({ input }: Props) => {
               </div>
             </AOS>
           </div>
-          <div className="col-md-6 col-xs-12">
+          <div className='col-md-6 col-xs-12'>
             {image && image.image && (
               // <AOS>
               <Image
@@ -44,7 +44,7 @@ const ModuleTextImageUI = ({ input }: Props) => {
                 width={image.image.asset?.metadata?.dimensions.width || 2000}
                 height={image.image.asset?.metadata?.dimensions.height || 2000}
                 alt={image.caption || ""}
-                sizes="100vw"
+                sizes='100vw'
                 style={{
                   width: "100%",
                   height: "100%",

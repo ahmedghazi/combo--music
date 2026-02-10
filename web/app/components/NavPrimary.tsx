@@ -22,7 +22,7 @@ type NavLinkProps = {
 const NavLink = ({ href, name, cta }: NavLinkProps) => {
   // const { asPath } = useRouter();
   const pathname = usePathname();
-  const ariaCurrent = href === pathname ? "page" : undefined;
+  const ariaCurrent = href !== "/" && href === pathname ? "page" : undefined;
 
   return (
     <LinkTransition href={href} aria-current={ariaCurrent} cta={cta}>
@@ -63,7 +63,7 @@ const NavPrimary = ({ input }: Props) => {
                 isLinkInternalWithSubmenu(item) &&
                 "has-submenu",
               item._type === "linkInternal" && item.cta && "is-cta",
-              item._type === "menuItem" && item.subMenu && "has-submenu"
+              item._type === "menuItem" && item.subMenu && "has-submenu",
             )}
           >
             <NavLink

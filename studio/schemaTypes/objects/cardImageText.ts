@@ -32,6 +32,7 @@ export default defineField({
   preview: {
     select: {
       title: `title.${baseLanguage}`,
+      subtitle: `tag.${baseLanguage}`,
       media: 'image.image',
     },
     // prepare(selection) {

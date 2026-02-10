@@ -1,5 +1,5 @@
-@use "../variables";
 @use "../mixins";
+@use "../variables";
 
 header {
   position: fixed;
@@ -72,10 +72,10 @@ header {
   }
   @media all and (min-width: variables.$md) {
     nav {
-      margin: 0 toRem(155);
+      margin: 0 mixins.toRem(155);
       margin: 0;
       ul {
-        gap: toRem(70);
+        gap: mixins.toRem(70);
         .has-submenu > a {
           // color: green;
           pointer-events: none;
@@ -86,7 +86,7 @@ header {
   @media all and (max-width: variables.$md) {
     padding: 0;
     .inner {
-      padding: toRem(11) toRem(16);
+      padding: mixins.toRem(11) mixins.toRem(16);
     }
     .logo {
       // width: 94px;
@@ -99,7 +99,7 @@ header {
     .burger-wrapper {
       z-index: 10;
       width: 30px;
-      height: toRem(25);
+      height: mixins.toRem(25);
       // margin: auto;
       margin-left: auto;
       .burger {
@@ -122,8 +122,8 @@ header {
       // color: ;
       inset: 0;
       z-index: 0;
-      padding: toRem(16);
-      padding-top: var(--header-height);
+      padding: mixins.toRem(16);
+      padding-top: var(--header-h);
       display: none;
       ul {
         flex-direction: column;

@@ -40,8 +40,5 @@
     "printWidth": 100,
     "bracketSpacing": false,
     "singleQuote": true
-  },
-  "engines": {
-    "node": ">=20.19"
   }
 }

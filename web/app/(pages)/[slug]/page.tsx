@@ -49,8 +49,9 @@ const Page: NextPage<PageProps> = async ({ params }) => {
   if (!data) return <div>please edit page</div>;
   return (
     <div
-      className='template template--page-modulaire'
-      data-template='page-modulaire'>
+      className="template template--page-modulaire"
+      data-template="page-modulaire"
+    >
       {data.modules && <ContentModulaire modules={data.modules} />}
     </div>
   );

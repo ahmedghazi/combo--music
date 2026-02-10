@@ -1,74 +1,110 @@
 import { groq } from "next-sanity";
+import { sanityFetch } from "./sanity.client";
 import { Home, PageModulaire, Settings } from "../types/schema";
 import { modules, seo } from "./fragments";
-import { sanityFetch } from "./sanity.client";
+// import { revalidatePath } from "next/cache";
+
 /*****************************************************************************************************
  * SETTINGS
  */
-export const SETTINGS_QUERY = groq`*[_type == "settings"][0]{
+export const settingsQuery = groq`*[_type == "settings"][0]{
+  ...,
+  comboStudioLogo{
+    ...,
+    asset->
+  },
+  navPrimary[]{
+    ...,
+    _type == 'linkInternal' => {
       ...,
-      comboStudioLogo{
-        ...,
-			  asset->
+      link->{
+        _type,
+        slug,
+        subMenu
       },
-      navPrimary[]{
-        ...,
-        _type == 'linkInternal' => {
-          ...,
-          link->{
-            _type,
-            slug,
-            subMenu
-          },
-        },
-        _type == 'menuItem' => {
-          ...,
-          link{
-            ...,
-            link->{
-              _type,
-              slug,
-              subMenu
-            }
-          },
-          subMenu[]{
-            ...,
-            link->{
-              _type,
-              slug
-            }
-          }
-        }
-      },
-      navSecondary[]{
-        ...,
-        _type == 'linkInternal' => {
-          ...,
-          link->{
-            _type,
-            slug,
-            subMenu
-          },
-        },
-      },
-      comboLogo{
-        ...,
-			  asset->
-      },
-      legalsUrl{
+    },
+    _type == 'menuItem' => {
+      ...,
+      link{
         ...,
         link->{
           _type,
           slug,
+          subMenu
         }
+      },
+      subMenu[]{
+        ...,
+        // link->{
+        //   _type,
+        //   slug
+        // }
+        _type == 'linkInternal' => {
+          ...,
+          link->{
+            _type,
+            slug,
+            subMenu
+          },
+        },
       }
-    }`;
+    }
+  },
+  navSecondary[]{
+    ...,
+    _type == 'linkInternal' => {
+      ...,
+      link->{
+        _type,
+        slug,
+        subMenu
+      },
+    },
+  },
+  comboLogo{
+    ...,
+    asset->
+  },
+  legalsUrl{
+    ...,
+    link->{
+      _type,
+      slug,
+    }
+  }
+}`;
+
 export async function getSettings(): Promise<Settings> {
   return sanityFetch({
-    query: SETTINGS_QUERY,
+    query: settingsQuery,
     tags: ["settings"],
   });
+  // return client.fetch(
+
+  // );
 }
+
+/*****************************************************************************************************
+ * Landing
+ */
+
+// export const landingQ = groq`*[_type == "landing"][0]{
+//   ...,
+//   seo{
+//     ${seo}
+//   },
+
+//   modules[]{
+//     ...,
+//     ${heroUI},
+//     ${textUI},
+//     ${contactsUI}
+//   }
+// }`;
+// export async function getLanding(): Promise<Landing> {
+//   // return client.fetch(landingQ, {});
+//   return cachedClient(landingQ, {});
+// }
 
 /*****************************************************************************************************
  * Home
@@ -89,6 +125,7 @@ export async function getHome(): Promise<Home> {
     query: HOME_QUERY,
     tags: ["home"],
   });
+  // return cachedClient(HOME_QUERY, {});
 }
 /*****************************************************************************************************
  * PAGE MODULAIRE
@@ -103,20 +140,22 @@ export const PAGE_MODULAIRE_QUERY = groq`*[_type == "pageModulaire" && slug.curr
   },
 }`;
 export async function getPageModulaire(slug: string): Promise<PageModulaire> {
+  // revalidatePath(slug);
   return sanityFetch({
     query: PAGE_MODULAIRE_QUERY,
     tags: ["pageModulaire"],
     qParams: { slug: slug },
   });
+  // return cachedClient(PAGE_MODULAIRE_QUERY, { slug: slug });
 }
 
+export const getAllPagesQuery = groq`*[_type == "pageModulaire"]{
+  _type, slug
+}`;
 export async function getAllPagesModulaire(): Promise<PageModulaire[]> {
+  // revalidatePath(slug);
   return sanityFetch({
-    query: groq`*[_type == "pageModulaire" && homePage != true && !(_id in path('drafts.**'))]{
-      _type,
-      slug,
-      _updatedAt
-    }`,
-    tags: ["allPagesModulare"],
+    query: getAllPagesQuery,
+    tags: ["pagesModulaire"],
   });
 }

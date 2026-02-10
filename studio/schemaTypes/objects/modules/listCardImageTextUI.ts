@@ -42,6 +42,11 @@ export default {
       type: 'array',
       of: [{type: 'cardImageText'}],
     }),
+    defineField({
+      name: 'navTags',
+      type: 'array',
+      of: [{type: 'localeString'}],
+    }),
   ],
   preview: {
     select: {

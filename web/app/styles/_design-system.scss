@@ -1,8 +1,6 @@
-@use "./variables";
-@use "./mixins";
-div {
-  position: relative;
-}
+@use "mixins";
+@use "variables";
+
 .cartouche {
   padding: 0.4em mixins.toRem(60);
   font-family: var(--font-primary-mono);
@@ -30,6 +28,7 @@ div {
   font-size: var(--text-lg);
   font-family: var(--font-primary-mono);
   white-space: nowrap;
+  cursor: pointer;
   &:hover,
   &.is-active {
     background-color: var(--color-accent);
@@ -125,6 +124,7 @@ div {
   }
   @media all and (max-width: variables.$md) {
     .summary {
+      // background-color: orange;
       .title {
         padding-left: var(--text-m-xl);
         padding-right: var(--text-m-xl);
@@ -145,7 +145,6 @@ div {
   position: absolute;
   inset: 0;
   mix-blend-mode: multiply;
-  pointer-events: none;
 }
 
 .is-hidden {

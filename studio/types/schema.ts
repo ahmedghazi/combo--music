@@ -72,15 +72,18 @@ export interface Home extends SanityDocument {
    */
   modules?: Array<
     | SanityKeyed<TextUI>
+    | SanityKeyed<TextsUI>
     | SanityKeyed<TextImageUI>
     | SanityKeyed<HeroUI>
+    | SanityKeyed<ImageUI>
+    | SanityKeyed<ImagesUI>
+    | SanityKeyed<LogosUI>
     | SanityKeyed<ContactsUI>
     | SanityKeyed<ListCardImageTextUI>
     | SanityKeyed<ListLieuUI>
     | SanityKeyed<ListStudioUI>
     | SanityKeyed<ListLModulaireUI>
     | SanityKeyed<ListPageUI>
-    | SanityKeyed<ImageUI>
     | SanityKeyed<MarqueeUI>
     | SanityKeyed<SplitImageTextUI>
     | SanityKeyed<CallOutUI>
@@ -126,15 +129,18 @@ export interface Landing extends SanityDocument {
    */
   modules?: Array<
     | SanityKeyed<TextUI>
+    | SanityKeyed<TextsUI>
     | SanityKeyed<TextImageUI>
     | SanityKeyed<HeroUI>
+    | SanityKeyed<ImageUI>
+    | SanityKeyed<ImagesUI>
+    | SanityKeyed<LogosUI>
     | SanityKeyed<ContactsUI>
     | SanityKeyed<ListCardImageTextUI>
     | SanityKeyed<ListLieuUI>
     | SanityKeyed<ListStudioUI>
     | SanityKeyed<ListLModulaireUI>
     | SanityKeyed<ListPageUI>
-    | SanityKeyed<ImageUI>
     | SanityKeyed<MarqueeUI>
     | SanityKeyed<SplitImageTextUI>
     | SanityKeyed<CallOutUI>
@@ -232,6 +238,13 @@ export interface Settings extends SanityDocument {
     | SanityKeyed<LinkExternal>
     | SanityKeyed<MenuItem>
   >;
+
+  /**
+   * Footer Dark  — `boolean`
+   *
+   *
+   */
+  footerDark?: boolean;
 
   /**
    * Naviguation Secondary — `array`
@@ -359,15 +372,18 @@ export interface PageModulaire extends SanityDocument {
    */
   modules?: Array<
     | SanityKeyed<TextUI>
+    | SanityKeyed<TextsUI>
     | SanityKeyed<TextImageUI>
     | SanityKeyed<HeroUI>
+    | SanityKeyed<ImageUI>
+    | SanityKeyed<ImagesUI>
+    | SanityKeyed<LogosUI>
     | SanityKeyed<ContactsUI>
     | SanityKeyed<ListCardImageTextUI>
     | SanityKeyed<ListLieuUI>
     | SanityKeyed<ListStudioUI>
     | SanityKeyed<ListLModulaireUI>
     | SanityKeyed<ListPageUI>
-    | SanityKeyed<ImageUI>
     | SanityKeyed<MarqueeUI>
     | SanityKeyed<SplitImageTextUI>
     | SanityKeyed<CallOutUI>
@@ -432,15 +448,18 @@ export interface Lieu extends SanityDocument {
    */
   modules?: Array<
     | SanityKeyed<TextUI>
+    | SanityKeyed<TextsUI>
     | SanityKeyed<TextImageUI>
     | SanityKeyed<HeroUI>
+    | SanityKeyed<ImageUI>
+    | SanityKeyed<ImagesUI>
+    | SanityKeyed<LogosUI>
     | SanityKeyed<ContactsUI>
     | SanityKeyed<ListCardImageTextUI>
     | SanityKeyed<ListLieuUI>
     | SanityKeyed<ListStudioUI>
     | SanityKeyed<ListLModulaireUI>
     | SanityKeyed<ListPageUI>
-    | SanityKeyed<ImageUI>
     | SanityKeyed<MarqueeUI>
     | SanityKeyed<SplitImageTextUI>
     | SanityKeyed<CallOutUI>
@@ -748,9 +767,16 @@ export type Embed = {
   /**
    * url — `url`
    *
-   * url publique du media ex: https://www.youtube.com/watch?v=exTZ9vB6ZeE
+   * for youtube, vimeo ex: https://www.youtube.com/watch?v=exTZ9vB6ZeE
    */
   url?: string;
+
+  /**
+   * iframe — `text`
+   *
+   *
+   */
+  iframe?: string;
 };
 
 export type KeyVal = {
@@ -970,6 +996,63 @@ export type TextUI = {
   foregroundColor?: string;
 };
 
+export type TextsUI = {
+  _type: "textsUI";
+  /**
+   * look — `string`
+   *
+   *
+   */
+  look?: "default" | "offset";
+
+  /**
+   * title — `localeString`
+   *
+   * Module titre (visible uniquement dans l'admin)
+   */
+  title?: LocaleString;
+
+  /**
+   * items — `array`
+   *
+   *
+   */
+  items?: Array<SanityKeyed<LocaleBlockContent>>;
+
+  /**
+   * titleCentered — `boolean`
+   *
+   * Titre centré?
+   */
+  titleCentered?: boolean;
+
+  /**
+   * backgroundImage — `image`
+   *
+   * Image de fond
+   */
+  backgroundImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+
+  /**
+   * backgroundColor — `string`
+   *
+   * Couleur de fond
+   */
+  backgroundColor?: string;
+
+  /**
+   * foregroundColor — `string`
+   *
+   * Couleur de texte
+   */
+  foregroundColor?: string;
+};
+
 export type ImageUI = {
   _type: "imageUI";
   /**
@@ -987,6 +1070,23 @@ export type ImageUI = {
   image?: Figure;
 };
 
+export type ImagesUI = {
+  _type: "imagesUI";
+  /**
+   * title — `string`
+   *
+   * Module title (displayed only in the admin)
+   */
+  title?: string;
+
+  /**
+   * items — `array`
+   *
+   *
+   */
+  items?: Array<SanityKeyed<Figure>>;
+};
+
 export type HeroUI = {
   _type: "heroUI";
   /**
@@ -1002,6 +1102,37 @@ export type HeroUI = {
    *
    */
   image?: Figure;
+};
+
+export type LogosUI = {
+  _type: "logosUI";
+  /**
+   * title — `localeString`
+   *
+   * Module title (displayed only in the admin)
+   */
+  title?: LocaleString;
+
+  /**
+   * items — `array`
+   *
+   *
+   */
+  items?: Array<SanityKeyed<Figure>>;
+
+  /**
+   * backgroundColor — `string`
+   *
+   * Couleur de fond
+   */
+  backgroundColor?: string;
+
+  /**
+   * foregroundColor — `string`
+   *
+   * Couleur de texte
+   */
+  foregroundColor?: string;
 };
 
 export type ContactsUI = {
@@ -1050,6 +1181,13 @@ export type ListCardImageTextUI = {
    *
    */
   items?: Array<SanityKeyed<CardImageText>>;
+
+  /**
+   * navTags — `array`
+   *
+   *
+   */
+  navTags?: Array<SanityKeyed<LocaleString>>;
 };
 
 export type ListLieuUI = {
@@ -1116,15 +1254,18 @@ export type ListLModulaireUI = {
    */
   items?: Array<
     | SanityKeyed<TextUI>
+    | SanityKeyed<TextsUI>
     | SanityKeyed<TextImageUI>
     | SanityKeyed<HeroUI>
+    | SanityKeyed<ImageUI>
+    | SanityKeyed<ImagesUI>
+    | SanityKeyed<LogosUI>
     | SanityKeyed<ContactsUI>
     | SanityKeyed<ListCardImageTextUI>
     | SanityKeyed<ListLieuUI>
     | SanityKeyed<ListStudioUI>
     | SanityKeyed<ListLModulaireUI>
     | SanityKeyed<ListPageUI>
-    | SanityKeyed<ImageUI>
     | SanityKeyed<MarqueeUI>
     | SanityKeyed<SplitImageTextUI>
     | SanityKeyed<CallOutUI>

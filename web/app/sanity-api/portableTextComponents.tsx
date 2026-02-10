@@ -23,25 +23,25 @@ const portableTextComponents: PortableTextComponents = {
   block: {
     h2: ({ children }) => <h2>{children}</h2>,
     "h2 text-lg": ({ children }) => (
-      <p className='text-md md:text-lg'>{children}</p>
+      <p className="text-md md:text-lg">{children}</p>
     ),
     "h2 text-2lg": ({ children }) => (
-      <p className='text-m-2lg md:text-2lg'>{children}</p>
+      <p className="text-m-2lg md:text-2lg">{children}</p>
     ),
     "h3 text-2lg": ({ children }) => (
-      <p className='text-m-2lg md:text-2lg'>{children}</p>
+      <p className="text-m-2lg md:text-2lg">{children}</p>
     ),
     "h3 text-lg": ({ children }) => (
-      <p className='text-md md:text-lg'>{children}</p>
+      <p className="text-md md:text-lg">{children}</p>
     ),
     "text-lg": ({ children }) => (
-      <p className='text-md md:text-lg '>{children}</p>
+      <p className="text-md md:text-lg ">{children}</p>
     ),
     "text-2lg": ({ children }) => (
-      <p className='text-m-2lg md:text-2lg '>{children}</p>
+      <p className="text-m-2lg md:text-2lg ">{children}</p>
     ),
     "text-xl": ({ children }) => (
-      <p className='text-md md:text-xl- headline'>{children}</p>
+      <p className="text-md md:text-xl- headline">{children}</p>
     ),
   },
   types: {
@@ -74,7 +74,7 @@ const portableTextComponents: PortableTextComponents = {
     },
     linkInternalCta: ({ children, value }) => {
       return (
-        <Link href={_linkResolver(value.reference)} className='btn--pill'>
+        <Link href={_linkResolver(value.reference)} className="btn--pill">
           {children}
         </Link>
       );
@@ -84,20 +84,21 @@ const portableTextComponents: PortableTextComponents = {
         <a
           href={value.href}
           rel={"noreferrer noopener"}
-          target='_blank'
-          className={value.cta ? "btn--pill" : ""}>
+          target="_blank"
+          className={value.cta ? "btn--pill" : ""}
+        >
           {children}
         </a>
       );
     },
     align_left: ({ children, value }) => (
-      <span className='text-left block'>{children}</span>
+      <span className="text-left block">{children}</span>
     ),
     align_center: ({ children, value }) => (
-      <span className='text-center block'>{children}</span>
+      <span className="text-center block">{children}</span>
     ),
     align_right: ({ children, value }) => (
-      <span className='text-right block'>{children}</span>
+      <span className="text-right block">{children}</span>
     ),
   },
 };

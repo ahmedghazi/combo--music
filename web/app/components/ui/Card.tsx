@@ -17,17 +17,17 @@ const Card = ({ image, title, tag, excerpt, text }: Props) => {
   // console.log(title);
   // console.log(text);
   return (
-    <article className="card">
-      <div className="inner">
+    <article className='card'>
+      <div className='inner'>
         {image && <FigureComponent asset={image.image} />}
-        <div className="content">
-          <div className="header">
+        <div className='content'>
+          <div className='header'>
             {title && <h3>{title}</h3>}
-            {tag && <span className="cartouche cartouche--sm">{tag}</span>}
+            {tag && <span className='cartouche cartouche--sm'>{tag}</span>}
           </div>
-          {!text && excerpt && <p className="excerpt">{excerpt}</p>}
+          {!text && excerpt && <p className='excerpt'>{excerpt}</p>}
           {text && (
-            <div className="text">
+            <div className='text'>
               <PortableText value={text} components={portableTextComponents} />
             </div>
           )}

@@ -6,6 +6,8 @@ const i18n = {
     locale: "fr",
     siteLanguage: "fr",
     ogLang: "fr_FR",
+    search: "Rechercher",
+    reserver: "RÉSERVER",
   },
   en: {
     default: false,
@@ -14,6 +16,8 @@ const i18n = {
     locale: "en",
     siteLanguage: "en",
     ogLang: "en_GB",
+    search: "Search",
+    reserver: "BOOK",
   },
 };
 
