@@ -83,6 +83,7 @@
         }
         .bg-blend {
           opacity: 0.5;
+          mix-blend-mode: unset;
         }
         .bg-blend + div {
           position: relative;
