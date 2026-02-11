@@ -42,17 +42,18 @@ const ModuleTextUI = ({ input }: Props) => {
       <div className={clsx("inner", `is-${look}`)} style={style}>
         {hasImage && (
           <>
-            <div className='bg-image' style={styleBgImage}></div>
+            <div className="bg-image" style={styleBgImage}></div>
             <div
-              className='bg-blend'
+              className="bg-blend"
               style={{
                 backgroundColor: backgroundColor,
-              }}></div>
+              }}
+            ></div>
           </>
         )}
 
-        <div className='row center-xs'>
-          <div className='col-md-10 col-xs-12'>
+        <div className="row center-xs">
+          <div className="col-md-10 col-xs-12">
             {rawLook === "default" && (
               <>
                 {title && (
@@ -64,7 +65,7 @@ const ModuleTextUI = ({ input }: Props) => {
                     </div>
                   </AOS>
                 )}
-                <div className='text mx-auto'>
+                <div className="text mx-auto">
                   {text && (
                     <AOS>
                       <PortableText
@@ -77,7 +78,7 @@ const ModuleTextUI = ({ input }: Props) => {
               </>
             )}
             {look === "offset" && (
-              <div className='mx-auto'>
+              <div className="mx-auto">
                 {title && (
                   <AOS>
                     <div className={titleCentered ? "text-center" : ""}>
@@ -88,9 +89,9 @@ const ModuleTextUI = ({ input }: Props) => {
                   </AOS>
                 )}
 
-                <div className='row'>
-                  <div className='col-sm-6 col-sm-offset-3 col-xs-12'>
-                    <div className='text '>
+                <div className="row">
+                  <div className="col-md-6 col-md-offset-3 col-xs-12">
+                    <div className="text ">
                       {text && (
                         <AOS>
                           <PortableText
@@ -117,7 +118,7 @@ const ModuleTextUI = ({ input }: Props) => {
                 )}
                 {text && (
                   <AOS>
-                    <div className='text'>
+                    <div className="text">
                       <PortableText
                         value={_localizeField(text)}
                         components={portableTextComponents}
