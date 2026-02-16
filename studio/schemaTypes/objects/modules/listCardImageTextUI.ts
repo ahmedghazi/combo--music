@@ -45,7 +45,7 @@ export default {
     defineField({
       name: 'navTags',
       type: 'array',
-      of: [{type: 'localeString'}],
+      of: [{type: 'reference', to: [{type: 'tag'}]}],
     }),
   ],
   preview: {

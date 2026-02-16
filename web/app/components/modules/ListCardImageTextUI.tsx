@@ -38,24 +38,23 @@ const ModuleListCardImageTextUI = ({ input }: Props) => {
 
         {navTags && navTags?.length > 0 && (
           <ul className="flex flex-wrap justify-center gap-md mb-50">
-            {navTags.map((item, i) => (
+            {navTags.map((item: SanityKeyedReference<Tag>, i) => (
               <li key={i}>
                 <AOS delay={i / 5}>
                   <button
                     className={clsx(
                       "btn--pill text-accent ",
-                      tag === _localizeField(item) && "is-active",
+                      tag === item.slug?.current && "is-active",
                     )}
-                    onClick={() => updateTag(item.fr || "")}
+                    onClick={() => updateTag(item.slug?.current || "")}
                   >
-                    {_localizeField(item)}
+                    {_localizeField(item.title)}
                   </button>
                 </AOS>
               </li>
             ))}
           </ul>
         )}
-
         <div
           className={clsx(
             "grid gap-xl md:gap-y-xl md:gap-md",
@@ -65,7 +64,10 @@ const ModuleListCardImageTextUI = ({ input }: Props) => {
         >
           {items?.map((item, i) => (
             <div
-              className={clsx("item", getIsInTag(item.tag?.fr || ""))}
+              className={clsx(
+                "item",
+                getIsInTag(item.tagFilter?.slug?.current || ""),
+              )}
               key={i}
             >
               <AOS delay={i / 5}>

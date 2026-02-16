@@ -917,6 +917,13 @@ export type CardImageText = {
   tag?: LocaleString;
 
   /**
+   * Tag Filter — `reference`
+   *
+   * Pour créer la nav filter sur la grille de Card Image Text
+   */
+  tagFilter?: SanityReference<Tag>;
+
+  /**
    * text — `localeBlockContent`
    *
    *
@@ -1196,7 +1203,7 @@ export type ListCardImageTextUI = {
    *
    *
    */
-  navTags?: Array<SanityKeyed<LocaleString>>;
+  navTags?: Array<SanityKeyedReference<Tag>>;
 };
 
 export type ListLieuUI = {
