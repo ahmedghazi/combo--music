@@ -32,6 +32,9 @@
         img {
           height: 100% !important;
         }
+        img {
+          max-height: 50dvh;
+        }
         @media all and (max-width: variables.$sm) {
           &-0,
           &-2 {
