@@ -34,10 +34,10 @@
   --spacing-m-md: 1.25rem;
 
   --text-sm: 0.86666667rem;
-  --text-md: 1.25rem;
+  --text-md: 1rem; /* old 17,5px new 16px */
   --text-lg: 1.25rem;
-  --text-2lg: 1.875rem;
-  --text-xl: 3.125rem;
+  --text-2lg: 1.571rem; /* old 26,25px new 22px */
+  --text-xl: 2.286rem; /* old 44px new 32px */
 
   --text-m-sm: 0.86666667rem;
   --text-m-md: 1.333rem;
