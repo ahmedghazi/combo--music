@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 import { sanityFetch } from "./sanity.client";
 import { Home, PageModulaire, Settings } from "../types/schema";
-import { modules, seo } from "./fragments";
+import { blockContent, modules, seo } from "./fragments";
 // import { revalidatePath } from "next/cache";
 
 /*****************************************************************************************************
@@ -71,6 +71,9 @@ export const settingsQuery = groq`*[_type == "settings"][0]{
       _type,
       slug,
     }
+  },
+  footerInfos{
+    ${blockContent}
   }
 }`;
 

@@ -1,4 +1,4 @@
-const remoteURL = 'https://combo-music.vercel.app'
+const remoteURL = 'https://combo-factory.vercel.app'
 const localURL = 'http://localhost:3000'
 const previewURL = window.location.hostname === 'localhost' ? localURL : remoteURL
 
