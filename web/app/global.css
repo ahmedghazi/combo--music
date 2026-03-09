@@ -8,8 +8,8 @@
   --color-secondary: #fff;
   --color-hover: #333;
   --color-muted: #999999;
-  --color-accent: #e74011;
-
+  /* --color-accent: #e74011; */
+  --color-accent: #f4c94d;
   --font-primary:
     "NTBau-Regular", "Helvetica Neue", "HelveticaNeueRoman",
     "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular",

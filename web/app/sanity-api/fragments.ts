@@ -262,7 +262,7 @@ export const listCardImageTextUI = `
 			text{
 				${blockContent}
 			},
-      tagFilter->{
+      tagsFilter[]->{
         title,
         slug
       }

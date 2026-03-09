@@ -25,10 +25,16 @@ const ModuleListCardImageTextUI = ({ input }: Props) => {
     setTag(val === tag ? "" : val);
   };
 
-  const getIsInTag = (val: string) => {
+  // const getIsInTag = (val: string) => {
+  //   if (!val) return "";
+  //   console.log(val, tag);
+  //   return tag !== "" && val === tag ? "is-selected" : "";
+  // };
+
+  const getIsInTag = (val: SanityKeyedReference<Tag>[] | undefined) => {
     if (!val) return "";
-    console.log(val, tag);
-    return tag !== "" && val === tag ? "is-selected" : "";
+    const tagsSlug = val.map((el) => el.slug?.current);
+    return tag !== "" && tagsSlug.includes(tag) ? "is-selected" : "";
   };
 
   return (
@@ -63,13 +69,7 @@ const ModuleListCardImageTextUI = ({ input }: Props) => {
           )}
         >
           {items?.map((item, i) => (
-            <div
-              className={clsx(
-                "item",
-                getIsInTag(item.tagFilter?.slug?.current || ""),
-              )}
-              key={i}
-            >
+            <div className={clsx("item", getIsInTag(item.tagsFilter))} key={i}>
               <AOS delay={i / 5}>
                 <Card
                   key={i}
