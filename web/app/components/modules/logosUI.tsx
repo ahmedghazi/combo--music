@@ -31,7 +31,7 @@ const ModulelogosUI = ({ input }: Props) => {
             <div key={index} className="item">
               <AOS delay={index / 5}>
                 <Figure asset={item.image?.asset} width={1000} />
-                <figcaption className="py-2">{item.caption}</figcaption>
+                {/* <figcaption className="py-2">{item.caption}</figcaption> */}
               </AOS>
             </div>
           ))}
